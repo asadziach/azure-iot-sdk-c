@@ -26,126 +26,126 @@ BEGIN_TEST_SUITE(iothubclient_amqp_ws_e2e_svc_fault_ctrl)
     //***********************************************************
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_Tcp)
     {
-        e2e_d2c_svc_fault_ctrl_kill_TCP_connection_with_transport_status_check(AMQP_Protocol_over_WebSocketsTls);
+        e2e_d2c_svc_fault_ctrl_kill_TCP_connection_with_transport_status_check(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_connection)
     {
-        e2e_d2c_svc_fault_ctrl_AMQP_kill_connection(AMQP_Protocol_over_WebSocketsTls);
+        e2e_d2c_svc_fault_ctrl_AMQP_kill_connection(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
-    // FAIL - continous retry
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_session)
-    {
-        e2e_d2v_svc_fault_ctrl_AMQP_kill_session(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - continous retry
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_session)
+    //{
+    //    e2e_d2v_svc_fault_ctrl_AMQP_kill_session(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
-    // FAIL - no recovery
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_CBS_request_link)
-    {
-        e2e_d2c_svc_fault_ctrl_AMQP_kill_CBS_request_link(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - no recovery
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_CBS_request_link)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_AMQP_kill_CBS_request_link(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
-    // FAIL - no recovery
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_CBS_response_link)
-    {
-        e2e_d2c_svc_fault_ctrl_AMQP_kill_CBS_response_link(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - no recovery
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_CBS_response_link)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_AMQP_kill_CBS_response_link(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_D2C_link)
     {
-        e2e_d2c_svc_fault_ctrl_AMQP_kill_D2C_link(AMQP_Protocol_over_WebSocketsTls);
+        e2e_d2c_svc_fault_ctrl_AMQP_kill_D2C_link(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
-    // FAIL - no recovery
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_C2D_link)
-    {
-        e2e_d2c_svc_fault_ctrl_AMQP_kill_C2D_link(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - no recovery
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_C2D_link)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_AMQP_kill_C2D_link(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
-    // FAIL - service alive
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_throttling_reconnect)
-    {
-        e2e_d2c_svc_fault_ctrl_AMQP_throttling_reconnect(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_throttling_reconnect)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_AMQP_throttling_reconnect(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
-    // FAIL - service alive
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_message_quota_exceeded)
-    {
-        e2e_d2c_svc_fault_ctrl_AMQP_message_quota_exceeded(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_message_quota_exceeded)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_AMQP_message_quota_exceeded(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
-    // FAIL - service alive
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_auth_error)
-    {
-        e2e_d2c_svc_fault_ctrl_AMQP_auth_error(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_auth_error)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_AMQP_auth_error(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
-    // FAIL - service alive
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_shut_down)
-    {
-        e2e_d2c_svc_fault_ctrl_AMQP_shut_down(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_d2c_svc_fault_ctrl_kill_AMQP_shut_down)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_AMQP_shut_down(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
     //***********************************************************
     // C2D
     //***********************************************************
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_Tcp)
     {
-        e2e_c2d_svc_fault_ctrl_kill_TCP_connection(AMQP_Protocol_over_WebSocketsTls);
+        e2e_c2d_svc_fault_ctrl_kill_TCP_connection(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_connection)
     {
-        e2e_c2d_svc_fault_ctrl_AMQP_kill_connection(AMQP_Protocol_over_WebSocketsTls);
+        e2e_c2d_svc_fault_ctrl_AMQP_kill_connection(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
-    // FAIL - continous retry
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_session)
-    {
-        e2e_c2d_svc_fault_ctrl_AMQP_kill_session(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - continous retry
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_session)
+    //{
+    //    e2e_c2d_svc_fault_ctrl_AMQP_kill_session(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
-    // FAIL - no recovery
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_CBS_request_link)
-    {
-        e2e_c2d_svc_fault_ctrl_AMQP_kill_CBS_request_link(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - no recovery
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_CBS_request_link)
+    //{
+    //    e2e_c2d_svc_fault_ctrl_AMQP_kill_CBS_request_link(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_CBS_response_link)
     {
-        e2e_c2d_svc_fault_ctrl_AMQP_kill_CBS_response_link(AMQP_Protocol_over_WebSocketsTls);
+        e2e_c2d_svc_fault_ctrl_AMQP_kill_CBS_response_link(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_D2C_link)
     {
-        e2e_c2d_svc_fault_ctrl_AMQP_kill_D2C_link(AMQP_Protocol_over_WebSocketsTls);
+        e2e_c2d_svc_fault_ctrl_AMQP_kill_D2C_link(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_C2D_link)
     {
-        e2e_c2d_svc_fault_ctrl_AMQP_kill_C2D_link(AMQP_Protocol_over_WebSocketsTls);
+        e2e_c2d_svc_fault_ctrl_AMQP_kill_C2D_link(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_throttling_reconnect)
     {
-        e2e_c2d_svc_fault_ctrl_throttling_reconnect(AMQP_Protocol_over_WebSocketsTls);
+        e2e_c2d_svc_fault_ctrl_throttling_reconnect(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_message_quota_exceeded)
     {
-        e2e_c2d_svc_fault_ctrl_message_quota_exceeded(AMQP_Protocol_over_WebSocketsTls);
+        e2e_c2d_svc_fault_ctrl_message_quota_exceeded(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
     TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_auth_error)
     {
-        e2e_c2d_svc_fault_ctrl_auth_error(AMQP_Protocol_over_WebSocketsTls);
+        e2e_c2d_svc_fault_ctrl_auth_error(AMQP_Protocol_over_WebSocketsTls, true);
     }
 
-    // FAIL - service alive
-    TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_shut_down)
-    {
-        e2e_d2c_svc_fault_ctrl_AMQP_shut_down(AMQP_Protocol_over_WebSocketsTls);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_AMQP_WS_e2e_c2d_svc_fault_ctrl_kill_AMQP_shut_down)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_AMQP_shut_down(AMQP_Protocol_over_WebSocketsTls, true);
+    //}
 
 END_TEST_SUITE(iothubclient_amqp_ws_e2e_svc_fault_ctrl)

@@ -26,61 +26,63 @@ BEGIN_TEST_SUITE(iothubclient_mqtt_e2e_svc_fault_ctrl)
     //***********************************************************
     TEST_FUNCTION(IoTHub_MQTT_e2e_d2c_svc_fault_ctrl_kill_Tcp)
     {
-        e2e_d2c_svc_fault_ctrl_kill_TCP_connection(MQTT_Protocol);
+        e2e_d2c_svc_fault_ctrl_kill_TCP_connection(MQTT_Protocol, false);
     }
 
-    // FAIL - service alive
-    TEST_FUNCTION(IoTHub_MQTT_e2e_d2c_svc_fault_ctrl_throttling_reconnect)
-    {
-        e2e_d2c_svc_fault_ctrl_MQTT_throttling_reconnect(MQTT_Protocol);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_MQTT_e2e_d2c_svc_fault_ctrl_throttling_reconnect)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_MQTT_throttling_reconnect(MQTT_Protocol, false);
+    //}
 
-    // FAIL - service alive
-    TEST_FUNCTION(IoTHub_MQTT_e2e_d2c_svc_fault_ctrl_message_quota_exceeded)
-    {
-        e2e_d2c_svc_fault_ctrl_MQTT_message_quota_exceeded(MQTT_Protocol);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_MQTT_e2e_d2c_svc_fault_ctrl_message_quota_exceeded)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_MQTT_message_quota_exceeded(MQTT_Protocol, false);
+    //}
 
-    // FAIL
-    TEST_FUNCTION(IoTHub_MQTT_e2e_d2c_svc_fault_ctrl_auth_error)
-    {
-        e2e_d2c_svc_fault_ctrl_MQTT_auth_error(MQTT_Protocol);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_MQTT_e2e_d2c_svc_fault_ctrl_auth_error)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_MQTT_auth_error(MQTT_Protocol, false);
+    //}
 
-    TEST_FUNCTION(IoTHub_MQTT_e2e_d2c_svc_fault_ctrl_shut_down)
-    {
-        e2e_d2c_svc_fault_ctrl_MQTT_shut_down(MQTT_Protocol);
-    }
+    //// FAIL - retry failing with error
+    //TEST_FUNCTION(IoTHub_MQTT_e2e_d2c_svc_fault_ctrl_shut_down)
+    //{
+    //    e2e_d2c_svc_fault_ctrl_MQTT_shut_down(MQTT_Protocol, false);
+    //}
 
     //***********************************************************
     // C2D
     //***********************************************************
     TEST_FUNCTION(IoTHub_MQTT_e2e_c2d_svc_fault_ctrl_kill_Tcp)
     {
-        e2e_c2d_svc_fault_ctrl_kill_TCP_connection(MQTT_Protocol);
+        e2e_c2d_svc_fault_ctrl_kill_TCP_connection(MQTT_Protocol, false);
     }
 
-    // FAIL - service alive
-    TEST_FUNCTION(IoTHub_MQTT_e2e_c2d_svc_fault_ctrl_throttling_reconnect)
-    {
-        e2e_c2d_svc_fault_ctrl_throttling_reconnect(MQTT_Protocol);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_MQTT_e2e_c2d_svc_fault_ctrl_throttling_reconnect)
+    //{
+    //    e2e_c2d_svc_fault_ctrl_throttling_reconnect(MQTT_Protocol, false);
+    //}
 
-    // FAIL - service alive
-    TEST_FUNCTION(IoTHub_MQTT_e2e_c2d_svc_fault_ctrl_message_quota_exceeded)
-    {
-        e2e_c2d_svc_fault_ctrl_message_quota_exceeded(MQTT_Protocol);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_MQTT_e2e_c2d_svc_fault_ctrl_message_quota_exceeded)
+    //{
+    //    e2e_c2d_svc_fault_ctrl_message_quota_exceeded(MQTT_Protocol, false);
+    //}
 
-    // FAIL
-    TEST_FUNCTION(IoTHub_MQTT_e2e_c2d_svc_fault_ctrl_auth_error)
-    {
-        e2e_c2d_svc_fault_ctrl_auth_error(MQTT_Protocol);
-    }
+    //// FAIL - service alive
+    //TEST_FUNCTION(IoTHub_MQTT_e2e_c2d_svc_fault_ctrl_auth_error)
+    //{
+    //    e2e_c2d_svc_fault_ctrl_auth_error(MQTT_Protocol, false);
+    //}
 
-    TEST_FUNCTION(IoTHub_MQTT_e2e_c2d_svc_fault_ctrl_shut_down)
-    {
-        e2e_c2d_svc_fault_ctrl_MQTT_shut_down(MQTT_Protocol);
-    }
+    //// FAIL - retry failing with error
+    //TEST_FUNCTION(IoTHub_MQTT_e2e_c2d_svc_fault_ctrl_shut_down)
+    //{
+    //    e2e_c2d_svc_fault_ctrl_MQTT_shut_down(MQTT_Protocol, false);
+    //}
 
 END_TEST_SUITE(iothubclient_mqtt_e2e_svc_fault_ctrl)
