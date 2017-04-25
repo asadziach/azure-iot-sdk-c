@@ -9,7 +9,7 @@
 
 static TEST_MUTEX_HANDLE g_dllByDll;
 
-BEGIN_TEST_SUITE(iothubclient_mqtt_device_method_e2e_svc_fault_ctrl)
+BEGIN_TEST_SUITE(iothubclient_mqtt_dm_e2e_sfc)
 
     TEST_SUITE_INITIALIZE(TestClassInitialize)
     {
@@ -34,5 +34,5 @@ BEGIN_TEST_SUITE(iothubclient_mqtt_device_method_e2e_svc_fault_ctrl)
     //    device_method_e2e_method_call_svc_fault_ctrl_kill_Tcp(MQTT_Protocol, true);
     //}
 
-    END_TEST_SUITE(iothubclient_mqtt_device_method_e2e_svc_fault_ctrl)
+    END_TEST_SUITE(iothubclient_mqtt_dm_e2e_sfc)
 

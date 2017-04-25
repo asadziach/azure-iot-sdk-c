@@ -7,7 +7,7 @@
 
 static TEST_MUTEX_HANDLE g_dllByDll;
 
-BEGIN_TEST_SUITE(iothubclient_mqtt_ws_e2e_svc_fault_ctrl)
+BEGIN_TEST_SUITE(iothubclient_mqtt_ws_e2e_sfc)
 
     TEST_SUITE_INITIALIZE(TestClassInitialize)
     {
@@ -87,4 +87,4 @@ BEGIN_TEST_SUITE(iothubclient_mqtt_ws_e2e_svc_fault_ctrl)
     //    e2e_c2d_svc_fault_ctrl_MQTT_shut_down(MQTT_WebSocket_Protocol, false);
     //}
 
-END_TEST_SUITE(iothubclient_mqtt_ws_e2e_svc_fault_ctrl)
+END_TEST_SUITE(iothubclient_mqtt_ws_e2e_sfc)

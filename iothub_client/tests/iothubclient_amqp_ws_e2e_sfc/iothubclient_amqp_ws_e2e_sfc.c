@@ -7,7 +7,7 @@
 
 static TEST_MUTEX_HANDLE g_dllByDll;
 
-BEGIN_TEST_SUITE(iothubclient_amqp_ws_e2e_svc_fault_ctrl)
+BEGIN_TEST_SUITE(iothubclient_amqp_ws_e2e_sfc)
 
     TEST_SUITE_INITIALIZE(TestClassInitialize)
     {
@@ -148,4 +148,4 @@ BEGIN_TEST_SUITE(iothubclient_amqp_ws_e2e_svc_fault_ctrl)
     //    e2e_d2c_svc_fault_ctrl_AMQP_shut_down(AMQP_Protocol_over_WebSocketsTls, true);
     //}
 
-END_TEST_SUITE(iothubclient_amqp_ws_e2e_svc_fault_ctrl)
+END_TEST_SUITE(iothubclient_amqp_ws_e2e_sfc)
