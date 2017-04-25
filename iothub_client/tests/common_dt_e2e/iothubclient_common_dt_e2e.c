@@ -661,6 +661,8 @@ void dt_e2e_send_reported_test_svc_fault_ctrl_kill_Tcp(IOTHUB_CLIENT_TRANSPORT_P
         ThreadAPI_Sleep(1000);
     }
     ASSERT_IS_TRUE_WITH_MSG(status_code < 300, "SendReported status_code is an error");
+
+    Map_Destroy(propMap);
 }
 
 void dt_e2e_get_complete_desired_test_svc_fault_ctrl_kill_Tcp(IOTHUB_CLIENT_TRANSPORT_PROVIDER protocol)
@@ -790,4 +792,6 @@ void dt_e2e_get_complete_desired_test_svc_fault_ctrl_kill_Tcp(IOTHUB_CLIENT_TRAN
 
     // unsubscribe
     iot_result = IoTHubClient_SetDeviceTwinCallback(iotHubClientHandle, NULL, NULL);
+
+    Map_Destroy(propMap);
 }

@@ -511,6 +511,7 @@ static void test_device_method_with_string_svc_fault_ctrl(IOTHUB_PROVISIONED_DEV
         ASSERT_FAIL("response string does not match");
     }
 
+    Map_Destroy(propMap);
     free(responsePayload);
 }
 

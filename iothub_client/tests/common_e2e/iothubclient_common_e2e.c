@@ -737,6 +737,7 @@ void e2e_d2c_with_svc_fault_ctrl(IOTHUB_CLIENT_TRANSPORT_PROVIDER protocol, bool
     service_wait_for_d2c_event_arrival(deviceToUse, d2cMessage);
 
     // cleanup
+    Map_Destroy(propMap);
     destroy_d2c_message_handle(d2cMessage);
 }
 
@@ -827,6 +828,7 @@ void e2e_d2c_with_svc_fault_ctrl_with_transport_status(IOTHUB_CLIENT_TRANSPORT_P
     service_wait_for_d2c_event_arrival(deviceToUse, d2cMessage);
 
     // cleanup
+    Map_Destroy(propMap);
     destroy_d2c_message_handle(d2cMessage);
 }
 
@@ -936,6 +938,7 @@ void e2e_d2c_with_svc_fault_ctrl_no_answer(IOTHUB_CLIENT_TRANSPORT_PROVIDER prot
     service_wait_for_d2c_event_arrival(deviceToUse, d2cMessage);
 
     // cleanup
+    Map_Destroy(propMap);
     destroy_d2c_message_handle(d2cMessage);
 }
 
@@ -1148,6 +1151,7 @@ void e2e_c2d_with_svc_fault_ctrl(IOTHUB_CLIENT_TRANSPORT_PROVIDER protocol, bool
     ASSERT_IS_TRUE_WITH_MSG(receiveUserContext->wasFound, "Failure retrieving data from C2D"); // was found is written by the callback...
 
     // cleanup
+    Map_Destroy(propMap);
     IoTHubMessaging_Close(iotHubMessagingHandle);
     IoTHubMessaging_Destroy(iotHubMessagingHandle);
     IoTHubServiceClientAuth_Destroy(iotHubServiceClientHandle);
