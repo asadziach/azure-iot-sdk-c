@@ -34,7 +34,10 @@ static int callbackCounter;
 static bool g_continueRunning;
 static char msgText[1024];
 static char propText[1024];
-#define MESSAGE_COUNT       5
+/* Read value from I2C sensor and replace this. */
+/* Alert generated if temp > 82 from Stream Analytics Job. */
+#define HARDCODED_TEMP      25.0 
+#define MESSAGE_COUNT       1
 #define DOWORK_LOOP_NUM     3
 
 
@@ -170,7 +173,7 @@ void iothub_client_sample_http_run(void)
                 {
                     if (iterator < MESSAGE_COUNT)
                     {
-                        sprintf_s(msgText, sizeof(msgText), "{\"deviceId\": \"myFirstDevice\",\"windSpeed\": %.2f}", avgWindSpeed + (rand() % 4 + 2));
+                        sprintf_s(msgText, sizeof(msgText), "{\"ObjectName\":\"pbu-dev-demo-01\",\"ObjectType\":\"SensorTagEvent\",\"Version\":\"OFF\",\"TargetAlarmDevice\":\"pbu-dev-demo-01\",\"temp\": %.2f}", HARDCODED_TEMP);
                         if ((messages[iterator].messageHandle = IoTHubMessage_CreateFromByteArray((const unsigned char*)msgText, strlen(msgText))) == NULL)
                         {
                             (void)printf("ERROR: iotHubMessageHandle is NULL!\r\n");
